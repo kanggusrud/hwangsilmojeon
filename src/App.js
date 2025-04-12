@@ -1,4 +1,19 @@
 import React from 'react';
-export default function App() {
-  return <h1>황실모의전 조선 커뮤니티에 오신 걸 환영합니다!</h1>;
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Admin from './pages/Admin';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<div>홈페이지: 황실모의전 조선</div>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/join" element={<Register />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </Router>
+  );
 }
+export default App;
